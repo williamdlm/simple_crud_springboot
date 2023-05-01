@@ -17,7 +17,7 @@ public class PersonResource {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Person> findById(@PathVariable Long id){
-        Person obj = personRepository.findById(id);
+        Person obj = personRepository.findById(id).get();
         return ResponseEntity.ok(obj);
     }
 
@@ -36,7 +36,7 @@ public class PersonResource {
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Person> delete(@PathVariable Long id){
-        personRepository.delete(id);
+        personRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
