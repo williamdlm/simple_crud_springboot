@@ -1,8 +1,10 @@
 package org.example.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "TB_PERSON")
@@ -14,12 +16,16 @@ import javax.persistence.*;
 public class Person {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_PACIENTE")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "SEQ_PERSON")
     @Column(name = "CD_PERSON",nullable = false)
     private Long id;
 
     @Column(name = "NM_PERSON",nullable = false)
     private String name;
+
+    @OneToMany(mappedBy = "owner")
+    @JsonIgnore
+    private List<Vehicle> vehicle;
 
 
 }
