@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@AllArgsConstructor
 @ToString
 public class Vehicle {
     @Id

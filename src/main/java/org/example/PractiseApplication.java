@@ -28,24 +28,19 @@ public class PractiseApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Person p1 = new Person();
-        p1.setName("Joao");
-        Person p2 = new Person();
-        p2.setName("John");
-        Person p3 = new Person();
-        p3.setName("Paola");
+        Person p1 = new Person(null,"John B. Tellmaner",null);
+
+        Person p2 = new Person(null,"Tadashi R. Kyorin",null);
+
+        Person p3 = new Person(null, "Anita Von Dellus",null);
 
 
 
-        Vehicle v1 = new Vehicle();
-        v1.setTypeVehicle("Bike");
-        v1.setOwner(p1);
-        Vehicle v2 = new Vehicle();
-        v2.setTypeVehicle("MotorCycle");
-        v2.setOwner(p2);
-        Vehicle v3 = new Vehicle();
-        v3.setTypeVehicle("Car");
-        v3.setOwner(p3);
+        Vehicle v1 = new Vehicle(null,"Bike",p1);
+
+        Vehicle v2 = new Vehicle(null,"MotorCycle", p2);
+
+        Vehicle v3 = new Vehicle(null, "Car", p2);
 
         p1.setVehicle(Arrays.asList(v1));
         p2.setVehicle(Arrays.asList(v2,v3));

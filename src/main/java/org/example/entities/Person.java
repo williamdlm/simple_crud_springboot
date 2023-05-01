@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@AllArgsConstructor
 @SequenceGenerator(name = "SEQ_PERSON",sequenceName = "SEQ_PERSON",allocationSize = 1)
 public class Person {
 
