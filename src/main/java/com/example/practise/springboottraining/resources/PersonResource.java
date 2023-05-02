@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
+import javax.persistence.EntityNotFoundException;
 import java.net.URI;
 import java.util.List;
 
@@ -21,9 +21,15 @@ public class PersonResource {
     @GetMapping(value = {"/{id}"})
     public ResponseEntity<Person> findById(@PathVariable Long id) {
         Person obj = personRepository.findById(id).orElseThrow(
-                () -> new ResponseStatusException(HttpStatus.NOT_FOUND,
-                        "Usuário não encontrado com o ID: " + id));
+                () -> new EntityNotFoundException("Pessoa não encontrada"));
         return ResponseEntity.ok(obj);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ResponseBody
+    public String handleEntityNotFoundException(EntityNotFoundException ex) {
+        return ex.getMessage();
     }
 
     @GetMapping
