@@ -1,5 +1,6 @@
 com\example\practise\springboottraining\entities\Person.class
 com\example\practise\springboottraining\resources\VehicleResource.class
+com\example\practise\springboottraining\SwaggerConfig.class
 com\example\practise\springboottraining\DemoApplication.class
 com\example\practise\springboottraining\repositories\PersonRepository.class
 com\example\practise\springboottraining\entities\Vehicle.class
