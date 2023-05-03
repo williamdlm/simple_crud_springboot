@@ -1,12 +1,11 @@
 package com.example.practise.springboottraining.entities;
 
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,9 +17,14 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_PERSON")
-    @Column(name = "CD_PERSON")
+    @Column(name = "CD_PERSON", nullable = false)
     private Long id;
 
-    @Column(name = "NM_PERSON")
+    @Column(name = "NM_PERSON", nullable = false)
     private String name;
+
+    //@Column(name = "CD_VEHICLE")
+    @OneToMany(mappedBy = "owner")
+    @JsonIgnore
+    private List<Vehicle> vehicles;
 }

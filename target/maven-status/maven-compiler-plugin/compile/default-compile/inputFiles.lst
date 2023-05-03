@@ -1,4 +1,7 @@
 D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\DemoApplication.java
 D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\resources\PersonResource.java
 D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\repositories\PersonRepository.java
+D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\resources\VehicleResource.java
+D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\entities\Vehicle.java
+D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\repositories\VehicleRepository.java
 D:\Programing\SpringBootTraining\src\main\java\com\example\practise\springboottraining\entities\Person.java
