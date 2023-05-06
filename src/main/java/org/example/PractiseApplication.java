@@ -29,17 +29,11 @@ public class PractiseApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Person p1 = new Person(null,"John B. Tellmaner",null);
-
         Person p2 = new Person(null,"Tadashi R. Kyorin",null);
-
         Person p3 = new Person(null, "Anita Von Dellus",null);
 
-
-
         Vehicle v1 = new Vehicle(null,"Bike",p1);
-
         Vehicle v2 = new Vehicle(null,"MotorCycle", p2);
-
         Vehicle v3 = new Vehicle(null, "Car", p2);
 
         p1.setVehicle(Arrays.asList(v1));
